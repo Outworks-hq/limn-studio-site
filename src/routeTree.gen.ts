@@ -10,7 +10,14 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AppsRouteImport } from './routes/apps'
+import { Route as CloudRouteImport } from './routes/cloud'
+import { Route as LearnRouteImport } from './routes/learn'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as SupportRouteImport } from './routes/support'
+import { Route as TeamsRouteImport } from './routes/teams'
+import { Route as VerificationRouteImport } from './routes/verification'
+import { Route as AppsIndexRouteImport } from './routes/apps.index'
 import { Route as AppsFilmworksRouteImport } from './routes/apps.filmworks'
 import { Route as AppsImagelineRouteImport } from './routes/apps.imageline'
 import { Route as AppsModelworksRouteImport } from './routes/apps.modelworks'
@@ -22,98 +29,187 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AppsRoute = AppsRouteImport.update({
-  id: '/apps',
-  path: '/apps',
+const CloudRoute = CloudRouteImport.update({
+  id: '/cloud',
+  path: '/cloud',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearnRoute = LearnRouteImport.update({
+  id: '/learn',
+  path: '/learn',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamsRoute = TeamsRouteImport.update({
+  id: '/teams',
+  path: '/teams',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerificationRoute = VerificationRouteImport.update({
+  id: '/verification',
+  path: '/verification',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppsIndexRoute = AppsIndexRouteImport.update({
+  id: '/apps/',
+  path: '/apps/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AppsFilmworksRoute = AppsFilmworksRouteImport.update({
-  id: '/filmworks',
-  path: '/filmworks',
-  getParentRoute: () => AppsRoute,
+  id: '/apps/filmworks',
+  path: '/apps/filmworks',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const AppsImagelineRoute = AppsImagelineRouteImport.update({
-  id: '/imageline',
-  path: '/imageline',
-  getParentRoute: () => AppsRoute,
+  id: '/apps/imageline',
+  path: '/apps/imageline',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const AppsModelworksRoute = AppsModelworksRouteImport.update({
-  id: '/modelworks',
-  path: '/modelworks',
-  getParentRoute: () => AppsRoute,
+  id: '/apps/modelworks',
+  path: '/apps/modelworks',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const AppsPublisherRoute = AppsPublisherRouteImport.update({
-  id: '/publisher',
-  path: '/publisher',
-  getParentRoute: () => AppsRoute,
+  id: '/apps/publisher',
+  path: '/apps/publisher',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const AppsSoundworksRoute = AppsSoundworksRouteImport.update({
-  id: '/soundworks',
-  path: '/soundworks',
-  getParentRoute: () => AppsRoute,
+  id: '/apps/soundworks',
+  path: '/apps/soundworks',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/apps': typeof AppsRouteWithChildren
+  '/cloud': typeof CloudRoute
+  '/learn': typeof LearnRoute
+  '/login': typeof LoginRoute
+  '/pricing': typeof PricingRoute
+  '/support': typeof SupportRoute
+  '/teams': typeof TeamsRoute
+  '/verification': typeof VerificationRoute
   '/apps/filmworks': typeof AppsFilmworksRoute
   '/apps/imageline': typeof AppsImagelineRoute
   '/apps/modelworks': typeof AppsModelworksRoute
   '/apps/publisher': typeof AppsPublisherRoute
   '/apps/soundworks': typeof AppsSoundworksRoute
+  '/apps/': typeof AppsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/apps': typeof AppsRouteWithChildren
+  '/cloud': typeof CloudRoute
+  '/learn': typeof LearnRoute
+  '/login': typeof LoginRoute
+  '/pricing': typeof PricingRoute
+  '/support': typeof SupportRoute
+  '/teams': typeof TeamsRoute
+  '/verification': typeof VerificationRoute
   '/apps/filmworks': typeof AppsFilmworksRoute
   '/apps/imageline': typeof AppsImagelineRoute
   '/apps/modelworks': typeof AppsModelworksRoute
   '/apps/publisher': typeof AppsPublisherRoute
   '/apps/soundworks': typeof AppsSoundworksRoute
+  '/apps': typeof AppsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/apps': typeof AppsRouteWithChildren
+  '/cloud': typeof CloudRoute
+  '/learn': typeof LearnRoute
+  '/login': typeof LoginRoute
+  '/pricing': typeof PricingRoute
+  '/support': typeof SupportRoute
+  '/teams': typeof TeamsRoute
+  '/verification': typeof VerificationRoute
   '/apps/filmworks': typeof AppsFilmworksRoute
   '/apps/imageline': typeof AppsImagelineRoute
   '/apps/modelworks': typeof AppsModelworksRoute
   '/apps/publisher': typeof AppsPublisherRoute
   '/apps/soundworks': typeof AppsSoundworksRoute
+  '/apps/': typeof AppsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/apps'
+    | '/cloud'
+    | '/learn'
+    | '/login'
+    | '/pricing'
+    | '/support'
+    | '/teams'
+    | '/verification'
     | '/apps/filmworks'
     | '/apps/imageline'
     | '/apps/modelworks'
     | '/apps/publisher'
     | '/apps/soundworks'
+    | '/apps/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/apps'
+    | '/cloud'
+    | '/learn'
+    | '/login'
+    | '/pricing'
+    | '/support'
+    | '/teams'
+    | '/verification'
     | '/apps/filmworks'
     | '/apps/imageline'
     | '/apps/modelworks'
     | '/apps/publisher'
     | '/apps/soundworks'
+    | '/apps'
   id:
     | '__root__'
     | '/'
-    | '/apps'
+    | '/cloud'
+    | '/learn'
+    | '/login'
+    | '/pricing'
+    | '/support'
+    | '/teams'
+    | '/verification'
     | '/apps/filmworks'
     | '/apps/imageline'
     | '/apps/modelworks'
     | '/apps/publisher'
     | '/apps/soundworks'
+    | '/apps/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AppsRoute: typeof AppsRouteWithChildren
+  CloudRoute: typeof CloudRoute
+  LearnRoute: typeof LearnRoute
+  LoginRoute: typeof LoginRoute
+  PricingRoute: typeof PricingRoute
+  SupportRoute: typeof SupportRoute
+  TeamsRoute: typeof TeamsRoute
+  VerificationRoute: typeof VerificationRoute
+  AppsFilmworksRoute: typeof AppsFilmworksRoute
+  AppsImagelineRoute: typeof AppsImagelineRoute
+  AppsModelworksRoute: typeof AppsModelworksRoute
+  AppsPublisherRoute: typeof AppsPublisherRoute
+  AppsSoundworksRoute: typeof AppsSoundworksRoute
+  AppsIndexRoute: typeof AppsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -125,72 +221,115 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/apps': {
-      id: '/apps'
+    '/cloud': {
+      id: '/cloud'
+      path: '/cloud'
+      fullPath: '/cloud'
+      preLoaderRoute: typeof CloudRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learn': {
+      id: '/learn'
+      path: '/learn'
+      fullPath: '/learn'
+      preLoaderRoute: typeof LearnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teams': {
+      id: '/teams'
+      path: '/teams'
+      fullPath: '/teams'
+      preLoaderRoute: typeof TeamsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verification': {
+      id: '/verification'
+      path: '/verification'
+      fullPath: '/verification'
+      preLoaderRoute: typeof VerificationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/apps/': {
+      id: '/apps/'
       path: '/apps'
-      fullPath: '/apps'
-      preLoaderRoute: typeof AppsRouteImport
+      fullPath: '/apps/'
+      preLoaderRoute: typeof AppsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/apps/filmworks': {
       id: '/apps/filmworks'
-      path: '/filmworks'
+      path: '/apps/filmworks'
       fullPath: '/apps/filmworks'
       preLoaderRoute: typeof AppsFilmworksRouteImport
-      parentRoute: typeof AppsRoute
+      parentRoute: typeof rootRouteImport
     }
     '/apps/imageline': {
       id: '/apps/imageline'
-      path: '/imageline'
+      path: '/apps/imageline'
       fullPath: '/apps/imageline'
       preLoaderRoute: typeof AppsImagelineRouteImport
-      parentRoute: typeof AppsRoute
+      parentRoute: typeof rootRouteImport
     }
     '/apps/modelworks': {
       id: '/apps/modelworks'
-      path: '/modelworks'
+      path: '/apps/modelworks'
       fullPath: '/apps/modelworks'
       preLoaderRoute: typeof AppsModelworksRouteImport
-      parentRoute: typeof AppsRoute
+      parentRoute: typeof rootRouteImport
     }
     '/apps/publisher': {
       id: '/apps/publisher'
-      path: '/publisher'
+      path: '/apps/publisher'
       fullPath: '/apps/publisher'
       preLoaderRoute: typeof AppsPublisherRouteImport
-      parentRoute: typeof AppsRoute
+      parentRoute: typeof rootRouteImport
     }
     '/apps/soundworks': {
       id: '/apps/soundworks'
-      path: '/soundworks'
+      path: '/apps/soundworks'
       fullPath: '/apps/soundworks'
       preLoaderRoute: typeof AppsSoundworksRouteImport
-      parentRoute: typeof AppsRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
 
-interface AppsRouteChildren {
-  AppsFilmworksRoute: typeof AppsFilmworksRoute
-  AppsImagelineRoute: typeof AppsImagelineRoute
-  AppsModelworksRoute: typeof AppsModelworksRoute
-  AppsPublisherRoute: typeof AppsPublisherRoute
-  AppsSoundworksRoute: typeof AppsSoundworksRoute
-}
-
-const AppsRouteChildren: AppsRouteChildren = {
+const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
+  CloudRoute: CloudRoute,
+  LearnRoute: LearnRoute,
+  LoginRoute: LoginRoute,
+  PricingRoute: PricingRoute,
+  SupportRoute: SupportRoute,
+  TeamsRoute: TeamsRoute,
+  VerificationRoute: VerificationRoute,
   AppsFilmworksRoute: AppsFilmworksRoute,
   AppsImagelineRoute: AppsImagelineRoute,
   AppsModelworksRoute: AppsModelworksRoute,
   AppsPublisherRoute: AppsPublisherRoute,
   AppsSoundworksRoute: AppsSoundworksRoute,
-}
-
-const AppsRouteWithChildren = AppsRoute._addFileChildren(AppsRouteChildren)
-
-const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  AppsRoute: AppsRouteWithChildren,
+  AppsIndexRoute: AppsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
