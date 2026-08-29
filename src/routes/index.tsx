@@ -127,7 +127,7 @@ function Home() {
       <AppBar />
 
       <section className="bg-surface">
-        <div className="mx-auto grid max-w-[1400px] gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)_auto] lg:items-start lg:gap-14">
+        <div className="mx-auto grid max-w-[1400px] gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.7fr)_auto] lg:items-center lg:gap-12">
           <div className="flex items-start gap-6">
             <span className="grid h-[74px] w-[74px] shrink-0 place-items-center rounded-2xl bg-accent">
               <LockGlyph />
