@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { PageHeader, Section } from "@/components/site/PageHeader";
 import { apps } from "@/lib/apps";
 
-export const Route = createFileRoute("/apps")({
+export const Route = createFileRoute("/apps/")({
   head: () => ({
     meta: [
       { title: "Applications — LIMN Studio" },
