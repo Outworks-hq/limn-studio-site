@@ -11,11 +11,15 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CloudRouteImport } from './routes/cloud'
+import { Route as CompanyRouteImport } from './routes/company'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as LearnRouteImport } from './routes/learn'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as TeamsRouteImport } from './routes/teams'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as VerificationRouteImport } from './routes/verification'
 import { Route as AppsIndexRouteImport } from './routes/apps.index'
 import { Route as AppsFilmworksRouteImport } from './routes/apps.filmworks'
@@ -34,6 +38,16 @@ const CloudRoute = CloudRouteImport.update({
   path: '/cloud',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CompanyRoute = CompanyRouteImport.update({
+  id: '/company',
+  path: '/company',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LearnRoute = LearnRouteImport.update({
   id: '/learn',
   path: '/learn',
@@ -49,6 +63,11 @@ const PricingRoute = PricingRouteImport.update({
   path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SupportRoute = SupportRouteImport.update({
   id: '/support',
   path: '/support',
@@ -57,6 +76,11 @@ const SupportRoute = SupportRouteImport.update({
 const TeamsRoute = TeamsRouteImport.update({
   id: '/teams',
   path: '/teams',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const VerificationRoute = VerificationRouteImport.update({
@@ -98,11 +122,15 @@ const AppsSoundworksRoute = AppsSoundworksRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cloud': typeof CloudRoute
+  '/company': typeof CompanyRoute
+  '/contact': typeof ContactRoute
   '/learn': typeof LearnRoute
   '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
   '/support': typeof SupportRoute
   '/teams': typeof TeamsRoute
+  '/terms': typeof TermsRoute
   '/verification': typeof VerificationRoute
   '/apps/filmworks': typeof AppsFilmworksRoute
   '/apps/imageline': typeof AppsImagelineRoute
@@ -114,11 +142,15 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cloud': typeof CloudRoute
+  '/company': typeof CompanyRoute
+  '/contact': typeof ContactRoute
   '/learn': typeof LearnRoute
   '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
   '/support': typeof SupportRoute
   '/teams': typeof TeamsRoute
+  '/terms': typeof TermsRoute
   '/verification': typeof VerificationRoute
   '/apps/filmworks': typeof AppsFilmworksRoute
   '/apps/imageline': typeof AppsImagelineRoute
@@ -131,11 +163,15 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cloud': typeof CloudRoute
+  '/company': typeof CompanyRoute
+  '/contact': typeof ContactRoute
   '/learn': typeof LearnRoute
   '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
   '/support': typeof SupportRoute
   '/teams': typeof TeamsRoute
+  '/terms': typeof TermsRoute
   '/verification': typeof VerificationRoute
   '/apps/filmworks': typeof AppsFilmworksRoute
   '/apps/imageline': typeof AppsImagelineRoute
@@ -149,11 +185,15 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/cloud'
+    | '/company'
+    | '/contact'
     | '/learn'
     | '/login'
     | '/pricing'
+    | '/privacy'
     | '/support'
     | '/teams'
+    | '/terms'
     | '/verification'
     | '/apps/filmworks'
     | '/apps/imageline'
@@ -165,11 +205,15 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/cloud'
+    | '/company'
+    | '/contact'
     | '/learn'
     | '/login'
     | '/pricing'
+    | '/privacy'
     | '/support'
     | '/teams'
+    | '/terms'
     | '/verification'
     | '/apps/filmworks'
     | '/apps/imageline'
@@ -181,11 +225,15 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/cloud'
+    | '/company'
+    | '/contact'
     | '/learn'
     | '/login'
     | '/pricing'
+    | '/privacy'
     | '/support'
     | '/teams'
+    | '/terms'
     | '/verification'
     | '/apps/filmworks'
     | '/apps/imageline'
@@ -198,11 +246,15 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CloudRoute: typeof CloudRoute
+  CompanyRoute: typeof CompanyRoute
+  ContactRoute: typeof ContactRoute
   LearnRoute: typeof LearnRoute
   LoginRoute: typeof LoginRoute
   PricingRoute: typeof PricingRoute
+  PrivacyRoute: typeof PrivacyRoute
   SupportRoute: typeof SupportRoute
   TeamsRoute: typeof TeamsRoute
+  TermsRoute: typeof TermsRoute
   VerificationRoute: typeof VerificationRoute
   AppsFilmworksRoute: typeof AppsFilmworksRoute
   AppsImagelineRoute: typeof AppsImagelineRoute
@@ -228,6 +280,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CloudRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/company': {
+      id: '/company'
+      path: '/company'
+      fullPath: '/company'
+      preLoaderRoute: typeof CompanyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/learn': {
       id: '/learn'
       path: '/learn'
@@ -249,6 +315,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/support': {
       id: '/support'
       path: '/support'
@@ -261,6 +334,13 @@ declare module '@tanstack/react-router' {
       path: '/teams'
       fullPath: '/teams'
       preLoaderRoute: typeof TeamsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/verification': {
@@ -318,11 +398,15 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CloudRoute: CloudRoute,
+  CompanyRoute: CompanyRoute,
+  ContactRoute: ContactRoute,
   LearnRoute: LearnRoute,
   LoginRoute: LoginRoute,
   PricingRoute: PricingRoute,
+  PrivacyRoute: PrivacyRoute,
   SupportRoute: SupportRoute,
   TeamsRoute: TeamsRoute,
+  TermsRoute: TermsRoute,
   VerificationRoute: VerificationRoute,
   AppsFilmworksRoute: AppsFilmworksRoute,
   AppsImagelineRoute: AppsImagelineRoute,
