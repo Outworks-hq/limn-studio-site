@@ -132,7 +132,7 @@ function Home() {
             <span className="grid h-[74px] w-[74px] shrink-0 place-items-center rounded-2xl bg-accent">
               <LockGlyph />
             </span>
-            <h2 className="text-[clamp(1.75rem,3.6vw,2.4rem)] leading-[1.1] font-bold">
+            <h2 className="text-[clamp(1.6rem,3vw,2.25rem)] leading-[1.12] font-bold whitespace-nowrap">
               Built for creators.
               <br />
               Backed by proof.
